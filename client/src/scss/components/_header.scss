@@ -1,0 +1,96 @@
+.header {
+	// margin-top: 60px;
+	height: calc(100vh - 10vh);
+	display: flex;
+	position: relative;
+	background: #efebea;
+	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.15);
+
+	&__title {
+		flex: 4;
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		color: #444;
+		font-family: 'Lora', serif;
+
+		&--sm {
+			font-size: 1.3rem;
+		}
+		&--lg {
+			font-size: 10rem;
+		}
+	}
+	&__explore {
+		min-width: 25%;
+		width: 150px;
+		font-size: 1rem;
+		margin: 30px 0;
+		color: #444;
+		padding: 10px 20px;
+		border: 2px solid #be5c59;
+		border-radius: 3px;
+		text-decoration: none;
+		outline: none;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		cursor: pointer;
+		transition: all 300ms ease-in-out;
+
+		&:hover {
+			width: 180px;
+			& i {
+				transform: rotate(90deg);
+			}
+		}
+
+		i {
+			color: #be5c59;
+			font-size: 1.2rem;
+			transition: all 300ms ease-out;
+		}
+	}
+	&__img {
+		flex: 5;
+		background: url('../../assets/evie-s-_8vovuZCj0c-unsplash.jpg') no-repeat;
+		background-size: cover;
+		background-position: center 50%;
+		filter: grayscale(0.4);
+	}
+}
+
+body.dark {
+	.header {
+		background: #0d2132;
+		background: #000e19;
+
+		&__title {
+			flex: 4;
+			width: 100%;
+			color: white;
+			opacity: 0.87;
+		}
+
+		&__explore {
+			color: white;
+			border: 2px solid $cerulean-crayola;
+			opacity: 0.87;
+
+			i {
+				color: $cerulean-crayola;
+			}
+		}
+
+		&__img {
+			flex: 5;
+			// width: 55%;
+			background: url('../../assets/istockphoto-1285395672-170667a.jpg') no-repeat;
+			background-size: cover;
+			background-position: right center;
+			filter: brightness(0.4);
+		}
+	}
+}

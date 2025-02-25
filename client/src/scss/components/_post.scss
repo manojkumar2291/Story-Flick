@@ -1,0 +1,121 @@
+.post {
+	min-width: 30%;
+	width: 47%;
+	max-width: 475px;
+	height: max-content;
+	position: relative;
+	// margin: 0 25px 40px;
+	margin: 0 1% 50px;
+	padding-bottom: 10px;
+	border-radius: 7px;
+	transition: all 300ms ease-in-out;
+	cursor: pointer;
+	overflow: hidden;
+
+	&:hover {
+		transform: scale(1.03);
+		box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+	}
+	&:hover &__title {
+		color: $cerulean-crayola;
+	}
+	&:hover &__img {
+		filter: grayscale(0.6);
+	}
+
+	&:hover &__tag {
+		opacity: 1;
+	}
+
+	&__tag {
+		position: absolute;
+		top: 0;
+		right: 0;
+		color: #be9656;
+		opacity: 0;
+		font-family: 'Josefin Sans', sans-serif;
+		font-size: 1rem;
+		font-weight: 300;
+		padding: 10px 15px;
+		z-index: 10;
+		border-radius: 3px;
+		transition: all 300ms 300ms ease-out;
+	}
+
+	&__img {
+		width: 100%;
+		height: 280px;
+		object-fit: cover;
+		border-radius: 7px;
+		margin-bottom: 10px;
+		border: 1px solid lightgray;
+		transition: all 300ms ease-in-out;
+	}
+	&__info {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding: 0 20px;
+
+		&--cats {
+			margin-top: 5px;
+		}
+		&--cat {
+			font-family: 'Varela Round', sans-serif;
+			font-size: 14px;
+			color: #be9656;
+			line-height: 20px;
+			margin-right: 10px;
+			cursor: pointer;
+		}
+	}
+	&__title {
+		font-family: 'Josefin Sans', sans-serif;
+		font-size: 24px;
+		font-weight: 700;
+		margin-top: 15px;
+		cursor: pointer;
+		transition: all 300ms ease-in-out;
+
+		// &:hover {
+		// 	color: $cerulean-crayola;
+		// }
+	}
+	&__date {
+		font-family: 'Lora', serif;
+		font-style: italic;
+		font-size: 13px;
+		color: #999;
+		margin-top: 15px;
+	}
+	&__desc {
+		font-family: 'Varela Round', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+			Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+		font-size: 14px;
+		color: #444;
+		line-height: 24px;
+		margin-top: 15px;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		display: -webkit-box;
+		-webkit-line-clamp: 4;
+		-webkit-box-orient: vertical;
+		padding: 0 20px;
+	}
+}
+
+body.dark {
+	.post {
+		&__img {
+			border: 1px solid #171717;
+		}
+		&__title {
+			color: white;
+			opacity: 0.87;
+		}
+		&__desc {
+			color: white;
+			opacity: 0.65;
+		}
+	}
+}

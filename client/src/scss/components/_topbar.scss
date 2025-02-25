@@ -1,0 +1,160 @@
+.topbar {
+	width: 100%;
+	height: 10vh;
+	background: white;
+	background: linear-gradient(to bottom right, white, #efebea);
+	position: sticky;
+	top: 0;
+	display: flex;
+	align-items: center;
+	font-family: 'Josefin Sans', sans-serif;
+	z-index: 999;
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+	transition: all 300ms ease-out;
+
+	&__left,
+	&__right {
+		flex: 1;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	&__center {
+		flex: 2;
+	}
+	&__logo {
+		font-size: 3rem;
+		font-weight: 700;
+		letter-spacing: 2px;
+		font-family: 'The Nautigal';
+		color: $color1;
+	}
+
+	// &__icon {
+	// 	font-size: 20px;
+	// 	margin: 0 50px;
+	// 	color: #444;
+	// 	cursor: pointer;
+	// }
+	&__list {
+		display: flex;
+		justify-content: center;
+		list-style: none;
+
+		&--item {
+			position: relative;
+			margin: 0 15px;
+			font-size: 1.2rem;
+			font-weight: 300;
+			text-transform: uppercase;
+			color: $color1;
+			cursor: pointer;
+			transition: all 150ms ease-in-out;
+
+			&.active {
+				color: $cerulean-crayola;
+			}
+
+			&.disabled {
+				opacity: 0.4;
+				cursor: not-allowed !important;
+				pointer-events: none;
+
+				&:hover {
+					color: inherit;
+				}
+
+				&:after {
+					content: none;
+				}
+			}
+
+			&::after {
+				content: '';
+				width: 0;
+				height: 1.5px;
+				background: $cerulean-crayola;
+				border-radius: 5px;
+
+				position: absolute;
+				left: 50%;
+				bottom: -5px;
+				transition: all 150ms ease-in-out;
+			}
+
+			&:hover {
+				color: $cerulean-crayola;
+			}
+			&:hover::after {
+				width: 100%;
+				left: 0;
+				opacity: 0.6;
+			}
+		}
+	}
+	&__img {
+		$size: 45px;
+		width: $size;
+		height: $size;
+		border-radius: 50%;
+		object-fit: cover;
+		cursor: pointer;
+	}
+	&__username {
+		font-size: 1.5rem;
+		color: $color1;
+		margin: 0 10px;
+		font-weight: 300;
+		cursor: pointer;
+		transition: all 150ms ease-in-out;
+
+		&:hover {
+			color: $cerulean-crayola;
+		}
+	}
+	&__btn {
+		outline: none;
+		border: none;
+		margin-left: 20px;
+		background: transparent;
+	}
+	&__icon--theme {
+		font-size: 20px;
+		color: #666;
+		cursor: pointer;
+		transition: all 150ms ease-in-out;
+
+		&:hover {
+			color: $color1;
+		}
+	}
+}
+
+body.dark {
+	.topbar {
+		background: #0d1117;
+		background: $dark-bg;
+		transition: all 300ms ease-out;
+
+		&__logo,
+		&__list--item,
+		&__username {
+			color: white;
+			opacity: 0.87;
+		}
+		&__icon--theme {
+			color: white;
+			opacity: 0.6;
+			&:hover {
+				opacity: 0.87;
+			}
+		}
+		&__list--item.active {
+			color: $cerulean-crayola;
+		}
+		&__list--item:hover,
+		&__username:hover {
+			color: $cerulean-crayola;
+		}
+	}
+}

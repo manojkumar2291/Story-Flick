@@ -1,0 +1,81 @@
+// in comments component => .comment__wrapper
+.comment__wrapper {
+	margin: 40px 0;
+
+	.comment {
+		width: 100%;
+		padding: 10px 30px;
+		border-radius: 5px;
+		// background: rgb(245, 245, 245);
+		margin: 15px 0;
+		box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+		font-family: 'Varela Round', sans-serif;
+		border-bottom: 1px solid lightgrey;
+		transition: all 150ms ease-out;
+
+		&:hover {
+			border-bottom: 1px solid $cerulean-crayola;
+			box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+		}
+
+		&__info {
+			width: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+
+			&--left {
+				display: flex;
+				align-items: center;
+
+				img {
+					width: 40px;
+					aspect-ratio: 1 / 1;
+					object-fit: cover;
+					border-radius: 50%;
+				}
+				span {
+					font-size: 1rem;
+					color: #b39656;
+					font-size: 1.1rem;
+					margin-left: 10px;
+				}
+			}
+			&--right {
+				span {
+					color: gray;
+					font-size: 1rem;
+				}
+			}
+		}
+		&__icon {
+			margin-left: 10px;
+			cursor: pointer;
+			transition: all 150ms ease-out;
+
+			&:hover {
+				transform: scale(1.1);
+			}
+
+			&.edit {
+				color: teal;
+				display: none;
+			}
+			&.delete {
+				color: tomato;
+			}
+		}
+		p {
+			color: gray;
+			font-size: 1.1rem;
+			margin: 10px 0 10px 50px;
+		}
+	}
+}
+
+body.dark {
+	.comment {
+		background: transparent;
+		box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+	}
+}

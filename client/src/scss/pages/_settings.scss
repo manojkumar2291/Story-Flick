@@ -1,0 +1,153 @@
+.settings {
+	display: flex;
+
+	&__wrapper {
+		flex: 9;
+		padding: 20px;
+	}
+	&__title {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		&--update {
+			font-size: 30px;
+			color: $color1;
+			margin-bottom: 20px;
+		}
+		&--delete {
+			color: crimson;
+			text-transform: uppercase;
+			font-family: 'Poppins';
+			font-size: 14px;
+			border: 2px solid crimson;
+			padding: 5px 10px;
+			border-radius: 5px;
+			cursor: pointer;
+			transition: all 150ms ease-in-out;
+
+			&:hover {
+				background: crimson;
+				color: white;
+			}
+		}
+	}
+	&__form {
+		display: flex;
+		flex-direction: column;
+
+		&__profile--icon {
+			cursor: pointer;
+			transition: all 150ms ease-in-out;
+
+			&:hover {
+				transform: scale(1.1);
+			}
+		}
+
+		& > label {
+			font-size: 1.2rem;
+			margin-top: 20px;
+			color: $cerulean-crayola;
+		}
+
+		& input,
+		& > textarea {
+			resize: none;
+			font-size: 1rem;
+			color: gray;
+			background: transparent;
+			margin: 10px 0;
+			padding: 10px;
+			height: 30px;
+			border: none;
+			outline: none;
+			border-bottom: 1px solid lightgray;
+			font-family: 'Poppins', sans-serif;
+			transition: all 150ms ease-in-out;
+
+			&:focus {
+				border-bottom: 1px solid $cerulean-crayola;
+				border-radius: 5px;
+			}
+		}
+		& > textarea {
+			height: 50px;
+		}
+	}
+
+	&__social {
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		&--input {
+			width: 30%;
+		}
+	}
+
+	&__profilePicture {
+		display: flex;
+		align-items: center;
+		margin: 10px 0;
+
+		img {
+			width: 70px;
+			height: 70px;
+			border-radius: 5px;
+			object-fit: cover;
+		}
+
+		&--icon {
+			width: 25px;
+			height: 25px;
+			border-radius: 50%;
+			background: $cerulean-crayola;
+			color: white;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin-left: 10px;
+			cursor: pointer;
+		}
+	}
+
+	&__submit {
+		width: 150px;
+		align-self: flex-start;
+		border: none;
+		border-radius: 5px;
+		font-family: 'Poppins';
+		text-transform: uppercase;
+		color: white;
+		background: green;
+		padding: 10px;
+		margin-top: 20px;
+		cursor: pointer;
+		transition: all 150ms ease-out;
+
+		&:hover {
+			background: $cerulean-crayola;
+		}
+	}
+	&__success {
+		color: green;
+		text-align: center;
+		margin-top: 20px;
+	}
+}
+
+body.dark {
+	.settings {
+		&__title--update {
+			color: white;
+			opacity: 0.87;
+		}
+		input,
+		textarea {
+			color: white;
+			opacity: 0.87;
+		}
+	}
+}
