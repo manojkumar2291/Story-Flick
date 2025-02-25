@@ -1,1 +1,3 @@
-export const PF = 'http://localhost:8080/images/'
+
+
+export const PF = `${process.env.REACT_APP_BACKEND_URL}/images/`
