@@ -14,7 +14,7 @@ const Comments = ({ post, path }) => {
 	useEffect(() => {
 		const getComments = async () => {
 			try {
-				const res = await axios.get(`${backend}/comments/${path}`)
+				const res = await axios.get(`${backend}/api/comments/${path}`)
 				setComments(res.data)
 			} catch (err) {
 				console.log(err)

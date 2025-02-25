@@ -27,7 +27,7 @@ const Sidebar = () => {
 
 	useEffect(() => {
 		const getUsers = async () => {
-			const res = await axios.get(`${backend}/users`)
+			const res = await axios.get(`${backend}/api/users`)
 			const data = res.data
 			const filteredUser = data.filter(u => u._id !== user?._id)
 			setUsers(filteredUser)
