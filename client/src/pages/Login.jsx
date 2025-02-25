@@ -21,7 +21,7 @@ const Login = () => {
 		dispatch({ type: 'LOGIN_START' })
 		try {
 			
-			const res = await axios.post(`${backend}/auth/login`, values)
+			const res = await axios.post(`${backend}/api/auth/login`, values)
 			toast.success('Login Successful', { position: 'bottom-center', className: 'toast' })
 			dispatch({ type: 'LOGIN_SUCCESS', payload: res.data })
 			history.replace('/')

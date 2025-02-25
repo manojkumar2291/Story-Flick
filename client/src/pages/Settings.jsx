@@ -60,7 +60,7 @@ const Settings = () => {
 
 	const handleDelete = async () => {
 		try {
-			await axios.delete(`${backend}/users/${user._id}`, { data: { userId: user._id } })
+			await axios.delete(`${backend}/api/users/${user._id}`, { data: { userId: user._id } })
 			toast.success('Account has been deleted!', { position: 'bottom-center', className: 'toast' })
 			dispatch({ type: 'LOGOUT' })
 		} catch (err) {

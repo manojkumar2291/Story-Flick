@@ -31,7 +31,7 @@ const SinglePost = () => {
 	useEffect(() => {
 		const getPost = async () => {
 			try {
-				const res = await axios.get(`${backend}/posts/${path}`)
+				const res = await axios.get(`${backend}/api/posts/${path}`)
 				setPost(res.data)
 				setTitle(res.data.title)
 				setDesc(res.data.desc)
@@ -45,7 +45,7 @@ const SinglePost = () => {
 
 	const handleDelete = async () => {
 		try {
-			await axios.delete(`${backend}/posts/${path}`, {
+			await axios.delete(`${backend}/api/posts/${path}`, {
 				data: { username: user.username, userId: user._id, admin: user.admin },
 			})
 			toast.success('Post deleted Successful!', { position: 'bottom-center', className: 'toast' })
@@ -64,7 +64,7 @@ const SinglePost = () => {
 			.filter(c => c)
 		setCats(categories)
 		try {
-			await axios.put(`${backend}/posts/${path}`, {
+			await axios.put(`${backend}/api/posts/${path}`, {
 				title,
 				desc,
 				categories,

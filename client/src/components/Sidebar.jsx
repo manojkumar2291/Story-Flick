@@ -16,7 +16,7 @@ const Sidebar = () => {
 	useEffect(() => {
 		let list = []
 		const getPosts = async () => {
-			const res = await axios.get(`${backend}/posts`)
+			const res = await axios.get(`${backend}/api/posts`)
 			await res.data.map(p => p.categories.map(cat => list.push(cat)))
 			list = [...new Set(list)].reverse() // remove duplicates
 			list = (list.length > 6 && list.slice(0, 8)) || list // slice when list greater than 6

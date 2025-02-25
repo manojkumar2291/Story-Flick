@@ -26,7 +26,7 @@ const Comments = ({ post, path }) => {
 	const handleSubmit = async () => {
 		try {
 			await axios
-				.post(`${backend}/comments/`, {
+				.post(`${backend}/api/comments/`, {
 					comment,
 					postId: post._id,
 					postUserId: post.userId,

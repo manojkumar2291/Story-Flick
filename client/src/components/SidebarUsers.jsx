@@ -21,7 +21,7 @@ const SidebarUsers = () => {
 
 	useEffect(() => {
 		const getUser = async () => {
-			const res = await axios.get(`${backend}/users/${ID}`)
+			const res = await axios.get(`${backend}/api/users/${ID}`)
 			setUser(res.data)
 		}
 		getUser()
@@ -30,7 +30,7 @@ const SidebarUsers = () => {
 	useEffect(() => {
 		let list = []
 		const getPosts = async () => {
-			const res = await axios.get(`${backend}/posts`)
+			const res = await axios.get(`${backend}/api/posts`)
 			await res.data.map(p => p.categories.map(cat => list.push(cat)))
 			list = [...new Set(list)].reverse() // remove duplicates
 			list = (list.length > 6 && list.slice(0, 8)) || list // slice when list greater than 6
@@ -41,7 +41,7 @@ const SidebarUsers = () => {
 
 	useEffect(() => {
 		const getUsers = async () => {
-			const res = await axios.get(`${backend}/users`)
+			const res = await axios.get(`${backend}/api/users`)
 			const data = res.data
 			const filteredUser = data.filter(u => u._id !== user?._id)
 			setUsers(filteredUser)
@@ -51,7 +51,7 @@ const SidebarUsers = () => {
 
 	const deleteUser = async () => {
 		try {
-			await axios.delete(`${backend}/users/${ID}`, {
+			await axios.delete(`${backend}/api/users/${ID}`, {
 				data: { userId: context.user._id, admin: context.user.admin },
 			})
 			toast.success('User delete Successful', { position: 'bottom-center', className: 'toast' })

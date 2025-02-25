@@ -12,7 +12,7 @@ const Comment = ({ comment }) => {
 
 	const handleDelete = async () => {
 		try {
-			await axios.delete(`${backend}/comments/${comment._id}`).then(() => window.location.reload())
+			await axios.delete(`${backend}/api/comments/${comment._id}`).then(() => window.location.reload())
 			toast.success('Comment has been deleted!', { position: 'bottom-center', className: 'toast' })
 		} catch (err) {
 			toast.error('Comment deleting failed!', { position: 'bottom-center', className: 'toast' })

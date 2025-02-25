@@ -18,7 +18,7 @@ const Register = () => {
 	}
 	const onSubmit = async values => {
 		try {
-			const res = await axios.post(`${backend}/auth/register`, values)
+			const res = await axios.post(`${backend}/api/auth/register`, values)
 			toast.success('Register Successful', { position: 'bottom-center', className: 'toast' })
 			res.data && history.replace('/login')
 		} catch (err) {

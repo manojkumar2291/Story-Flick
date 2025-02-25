@@ -42,11 +42,11 @@ const Write = () => {
 			data.append('file', file)
 			newPost.photo = filename
 			try {
-				await axios.post(`${backend}/upload`, data)
+				await axios.post(`${backend}/api/upload`, data)
 			} catch (err) {}
 		}
 		try {
-			const res = await axios.post(`${backend}/posts`, newPost)
+			const res = await axios.post(`${backend}/api/posts`, newPost)
 			toast.success('Post created!', { position: 'bottom-center', className: 'toast' })
 			history.replace(`/post/${res.data._id}`)
 		} catch (err) {
