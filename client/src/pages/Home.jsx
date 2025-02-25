@@ -23,7 +23,7 @@ const Home = () => {
 	useEffect(() => {
 		const fetchPosts = async () => {
 			setIsFetching(true)
-			await axios.get(`${backend}/posts/${search}`).then(res => {
+			await axios.get(`${backend}/api/posts/${search}`).then(res => {
 				setPosts(res.data.reverse())
 				setIsFetching(false)
 			})
